@@ -1,0 +1,211 @@
+.navbar{
+    position: sticky;
+    width: 100vw;
+    font-family: Montserrat;
+    padding: 0;
+    margin: 0;
+    z-index: 1000;
+}
+
+.navbar-dark{
+    display: none;
+}
+
+.navbar-contacts,
+.follow,
+.social-media {
+    display: flex;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.navbar-contacts {
+    gap: 10px;
+}
+
+.follow, .social-media{
+     align-items: center;
+} 
+
+.navbar-contacts .phone,
+.navbar-contacts .email {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 5px;
+}
+
+.social-media{ 
+    gap: 10px;
+}
+
+.social-media ul {
+    display: flex;
+    list-style: none;
+    gap: 1rem;
+}
+
+ .social-media ul li {
+    margin-right: 10px;
+}
+
+.navbar-light{
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem;
+    font-size: 30px;
+    font-weight: 400;
+    color: #252B42;
+}
+
+
+/* .brand-name{
+    position: absolute;
+    font-size: 24px;
+    margin-right: 20px;
+} */
+
+
+
+.nav-menu {
+    /* position: absolute; */
+    top: 1.5rem;
+    left: 0;
+    right: 0;
+    width: 100vw;
+}
+
+
+.menu-toggle {
+    display: flex; /* Show toggle button by default on mobile screens */
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    z-index: 1001;
+}
+
+.menu-items {
+    display: none; /* Hide menu items by default */
+}
+
+.menu-items.open {
+    display: block;
+    /* position: relative;  */
+    /* top: 0;  */
+    /* left: 0; */
+    /* right: 0; */
+}
+
+.main-menu,
+.user-menu {
+    display: flex;
+    flex-direction: column;
+    width: fit-content;
+    margin: 80px auto 0 auto;
+    align-items: center;
+    gap: 30px;
+}
+
+.main-menu li,
+.user-menu li {
+    list-style: none;
+}
+
+.shop{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.caret{
+    display: none;
+}
+
+.user-menu{
+    display: flex;
+    list-style: none;
+    color: #23A6F0;
+}
+
+.login{
+    align-items: center;
+}
+
+.login img{
+    margin-right: 5px;
+}
+
+@media (min-width: 1100px) {
+
+    .navbar-dark{
+        background-color: #23856D;
+        font-family: Montserrat;
+        display: flex;
+        justify-content: space-between;
+        padding: 0.5rem 1.5rem;
+        color: #FFFFFF;
+        align-items: center;
+    }
+
+    .navbar-light{
+        /* align-items: center; */
+        font-size: 14px;
+        font-weight: 700;
+        padding: 10px 24px;
+        padding-right: 40px;
+    }
+
+    .brand-name{
+        position: absolute;
+        top: 0.5rem;
+        
+    }
+
+    .nav-menu{
+
+        position: relative;
+        top: 0;
+        
+    }
+
+
+    .main-menu,
+    .user-menu {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 30px;
+        margin: 0;
+    }
+
+    .main-menu{
+        margin-left: 150px;
+    }
+
+    .nav-menu nav{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+   
+    .menu-toggle{
+        display: none;
+    }
+
+    .menu-items{
+        display: flex;
+    }
+
+    .main-menu{
+        list-style: none;
+    }
+
+
+    .caret{
+        display: block;
+    }
+}
