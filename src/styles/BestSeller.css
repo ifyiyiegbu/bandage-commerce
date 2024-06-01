@@ -1,0 +1,79 @@
+.bestseller{
+  font-family: Montserrat;
+  margin-top: 20px;
+  padding: 80px 0;
+}
+
+.product-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+  }
+
+.list-header{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    color: #737373;
+}
+
+.list-header h4{
+  font-weight: 400;
+  font-size: 20px;
+  color: #252B42;
+
+}
+
+.list-header h3{
+  font-weight: 700;
+  font-size: 24px;
+}
+  
+  .product-card {
+    padding: 10px;
+    width: 250px;
+    text-align: left;
+  }
+  
+  .product-card img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .product-card h2 {
+    font-size: 1.2em;
+  }
+  
+  .product-card p {
+    margin: 0;
+    font-size: 0.9em;
+  }
+
+  .load-more-button{
+    display: flex;
+    border: 1px solid #23A6F0;
+    border-radius: 5px;
+    color: #23A6F0;
+    align-items: center;
+    margin: auto;
+    padding: 15px 40px;
+    margin-top: 12px;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+
+  @media (min-width: 769px){
+    .product-list {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      padding: 0 7rem;
+      margin-bottom: 12px;
+    }
+  }

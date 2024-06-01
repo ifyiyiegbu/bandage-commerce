@@ -1,0 +1,155 @@
+.footer-container{
+    width: 100vw;
+    height: fit-content;
+    background-color: #FAFAFA;
+}
+
+.container{
+    width: 100%;
+    height: 142px;
+}
+
+
+.first-line{
+    width: 100%;
+    max-width: 325px; 
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin: 0 auto;
+    padding: 40px 0px;
+}
+
+.first-line h3{
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: 0.1px;
+    color: #252B42;
+}
+
+.social-links{
+    display: flex;
+    gap: 20px;
+}
+
+.social-links img{
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.second-container{
+    width: 100%;
+    margin-top: 142px;
+}
+
+.resources{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 321px;
+    padding: 70px 0px;
+    margin: 0 auto;
+    gap: 30px;
+}
+
+
+.info-links{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.heading{
+    color: #252B42;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0.1px;
+}
+
+.info-links a{
+    text-decoration: none;
+    color: #737373;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+}
+
+.info-links p{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 28px;
+    letter-spacing: 0.2px;
+    color: #737373;
+}
+
+.subscribe input{
+    border: 1px solid #E6E6E6;
+    background-color: #F9F9F9;
+    color: #737373;
+    padding: 15px;
+    border-radius: 5px;
+}
+
+.subscribe input::placeholder{
+    color: #737373;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 28px;
+    letter-spacing: 0.2px;
+}
+
+.subscribe-btn{
+    border: 1px solid #E6E6E6;
+    border-radius: 0px 5px 5px 0px;
+    background-color: #23A6F0;
+    color: #FFFFFF;
+    padding: 15px;
+    cursor: pointer;
+}
+
+
+.copyright{
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0.2px;
+    color: #737373;
+    text-align: center;
+    background-color: #FAFAFA;
+    max-width: 200px;
+    margin: auto;
+}
+
+@media (min-width: 769px){
+
+    .first-line{
+        flex-direction: row;
+        width: 80%;
+        max-width: none;
+        margin: 0 auto;
+        padding: 40px 0;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .resources{
+        flex-direction: row;
+        justify-content: space-between;
+        width: 80%;
+        max-width: none;
+        margin: 0 auto;
+        padding: 50px 0px;
+    }
+
+
+    .copyright{
+        text-align: left;
+        width: 80%;
+        margin: 0 auto;
+        max-width: none;
+    }
+
+}
