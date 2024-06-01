@@ -1,3 +1,5 @@
+import Footer from "../components/Footer"
+import BestSeller from "../components/BestSeller"
 import "../styles/Home.css"
 
 function Home() {
@@ -53,6 +55,9 @@ function Home() {
                 </div>
             </div>
             
+        </section>
+        <section>
+            <BestSeller />
         </section>
         <section className="featured-products">
             <div className="featured-heading">
@@ -235,6 +240,7 @@ function Home() {
                 <button>ADD YOUR CALL TO ACTION</button>
             </div>
         </section>
+        <Footer />
       
     </main>
   )
