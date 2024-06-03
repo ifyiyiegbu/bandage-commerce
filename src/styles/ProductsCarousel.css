@@ -1,0 +1,17 @@
+.carousel{
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 506px;
+}
+
+.carousel img.carousel-image {
+    max-width: 100%; 
+    height: 450px; 
+    object-fit: contain; 
+  }
+
+  .carousel-button{
+    cursor: pointer;
+  }

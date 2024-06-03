@@ -1,18 +1,31 @@
 import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
+import { useSelector } from "react-redux";
 import "../styles/Navbar.css";
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const cart = useSelector((state) => state.cart);
+  const navigate = useNavigate();
+
+  const totalItems = cart.reduce((total, item) => total + item.quantity, 0);
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const handleNavigation = (path) => {
+    navigate(path);
+    setMenuOpen(false); 
   };
 
   return (
     <div className={`navbar-container ${menuOpen ? "menu-open" : ""}`}>
       <header className="navbar">
         <section className="navbar-dark">
+          <div className="navbar-inner">
+          
           <div className="navbar-contacts">
             <div className="phone">
               <img src="/images/telephone-icn.png" alt="Phone icon" />
@@ -53,9 +66,12 @@ function Navbar() {
               </a>
             </ul>
           </div>
+          </div>
         </section>
 
-        <section className="navbar-light">
+        <section className={`navbar-light ${menuOpen ? "menu-open" : ""}`}>
+          <div className="navbar-inner">
+          
           <h3 className="brand-name">Bandage</h3>
           <div className="nav-menu">
             <button
@@ -67,10 +83,10 @@ function Navbar() {
             </button>
             <nav className={`menu-items ${menuOpen ? "open" : ""}`}>
               <ul className="main-menu">
-                <li>
+                <li onClick={() => handleNavigation('/')}>
                   Home
                 </li>
-                <li className="shop">
+                <li onClick={() => handleNavigation('/product:id')} className="shop">
                   
                     Shop
                     <FaChevronDown className="caret" />
@@ -102,17 +118,20 @@ function Navbar() {
                   
                 </li>
                 <li>
-                  
-                    <img src="/images/cart-icn.png" alt="Cart icon" />
-                  
+                  <div className="cart-icon" onClick={() => handleNavigation('/shoppingcart')}>
+                    <img src="/images/cart-icn.png" alt="Cart icon"  className="shopping-basket" />
+                    {totalItems > 0 && <span className="cart-count">{totalItems}</span>}
+                  </div>
                 </li>
                 <li>
-                  
+                  <div className="likes">
                     <img src="/images/love-icn.png" alt="Wishlist icon" />
-                  
+                    <span>1</span>
+                  </div>
                 </li>
               </ul>
             </nav>
+          </div>
           </div>
         </section>
       </header>
