@@ -1,12 +1,19 @@
 import { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import "../styles/Navbar.css";
+import { useNavigate } from 'react-router-dom';
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen);
+  };
+
+  const handleNavigation = (path) => {
+    navigate(path);
+    setMenuOpen(false); 
   };
 
   return (
@@ -101,13 +108,13 @@ function Navbar() {
                     <img src="/images/search-icon.png" alt="Search icon" />
                   
                 </li>
-                <li>
+                <li onClick={() => handleNavigation('/shoppingcart')}>
                   
-                    <img src="/images/cart-icn.png" alt="Cart icon" />
+                    <img src="/images/cart-icn.png" alt="Cart icon"  className="shopping-basket" />
                   
                 </li>
                 <li>
-                  
+    
                     <img src="/images/love-icn.png" alt="Wishlist icon" />
                   
                 </li>

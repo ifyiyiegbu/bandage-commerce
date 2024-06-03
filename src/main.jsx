@@ -1,9 +1,12 @@
 import React from "react"
 import { createRoot } from "react-dom/client"
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import { Provider } from "react-redux"
 import App from "./App"
+import ProductDetail from "./pages/ProductDetail";
 import { store } from "./app/store"
 import "./index.css"
+import ShoppingCart from "./pages/ShoppingCart";
 
 const container = document.getElementById("root")
 
@@ -13,7 +16,13 @@ if (container) {
   root.render(
     <React.StrictMode>
       <Provider store={store}>
-        <App />
+        <Router>
+          <Routes>
+            <Route path="/" element={<App />} />
+            <Route path="/product/:id" element={<ProductDetail />} />
+            <Route path="/shoppingcart" element={<ShoppingCart />} />
+          </Routes>
+        </Router>
       </Provider>
     </React.StrictMode>
   )

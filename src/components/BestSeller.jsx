@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { useGetProductsQuery } from '../services/products';
 import "../styles/BestSeller.css"
 
-const ProductList = () => {
+const BestSeller = () => {
   const { data, error, isLoading } = useGetProductsQuery();
   const [visibleProducts, setVisibleProducts] = useState(10);
   const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleResize = () => {
@@ -14,7 +16,7 @@ const ProductList = () => {
     };
 
     window.addEventListener('resize', handleResize);
-    handleResize(); // Check initial size
+    handleResize(); 
 
     return () => {
       window.removeEventListener('resize', handleResize);
@@ -28,20 +30,23 @@ const ProductList = () => {
     setVisibleProducts((prevVisible) => prevVisible + (isMobile ? 5 : 10));
   };
 
+  const handleProductClick = (id) => {
+    navigate(`/product/${id}`);
+  };
+
   return (
     <main className='bestseller'>
-        <header className='list-header'>
-            <h4>Featured Products</h4>
-            <h3>BESTSELLER PRODUCTS</h3>
-            <p>Problems trying to resolve the conflict between</p>
-        </header>
+        
         <div className="product-list">
           {data.products.slice(0, visibleProducts).map((product) => (
-                <div key={product.id} className="product-card">
+                <div key={product.id} className="product-card" onClick={() => handleProductClick(product.id)}>
                 <img src={product.thumbnail} alt={product.title} />
                 <h2>{product.title}</h2>
                 <p>{product.category}</p>
                 <p>${product.price}</p>
+                {!product.stock && (
+                  <div className="out-of-stock-overlay">Out of Stock</div>
+                )}
                 </div>
             ))}
         </div>
@@ -54,4 +59,4 @@ const ProductList = () => {
   );
 };
 
-export default ProductList;
+export default BestSeller;

@@ -1,10 +1,16 @@
 import Footer from "../components/Footer"
 import BestSeller from "../components/BestSeller"
 import "../styles/Home.css"
+import Navbar from "../components/Navbar"
 
 function Home() {
+    
+
   return (
     <main className="home">
+        <section className="navbar">
+            <Navbar />
+        </section>
         <section className="home-pics">
             <div className="coconut">
                 <div className="card-label">
@@ -56,7 +62,12 @@ function Home() {
             </div>
             
         </section>
-        <section>
+        <section className="bestseller-section">
+            <header className='list-header'>
+                <h4>Featured Products</h4>
+                <h3>BESTSELLER PRODUCTS</h3>
+                <p>Problems trying to resolve the conflict between</p>
+            </header>
             <BestSeller />
         </section>
         <section className="featured-products">

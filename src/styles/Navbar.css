@@ -189,8 +189,8 @@
 
     .menu-items {
         display: flex;
-        position: static; /* Reset position for desktop */
-        flex-direction: row; /* Align items in row for desktop */
+        position: static; 
+        flex-direction: row; 
         /
     }
 
