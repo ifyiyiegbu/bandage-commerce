@@ -2,15 +2,18 @@ import Footer from "../components/Footer"
 import BestSeller from "../components/BestSeller"
 import "../styles/Home.css"
 import Navbar from "../components/Navbar"
+import { useMediaQuery } from "react-responsive"
 
 function Home() {
     
+    const isMobile = useMediaQuery({ query: '(max-width: 768px)' });
 
   return (
     <main className="home">
         <section className="navbar">
             <Navbar />
         </section>
+        <div className="home-content-container">
         <section className="home-pics">
             <div className="coconut">
                 <div className="card-label">
@@ -68,7 +71,13 @@ function Home() {
                 <h3>BESTSELLER PRODUCTS</h3>
                 <p>Problems trying to resolve the conflict between</p>
             </header>
-            <BestSeller />
+            <div>
+                {isMobile ? (
+                    <BestSeller limit={5} />
+                ) : (
+                    <BestSeller limit={10} />
+                )}
+            </div>
         </section>
         <section className="featured-products">
             <div className="featured-heading">
@@ -251,6 +260,7 @@ function Home() {
                 <button>ADD YOUR CALL TO ACTION</button>
             </div>
         </section>
+        </div>
         <Footer />
       
     </main>

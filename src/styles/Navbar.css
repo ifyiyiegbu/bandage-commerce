@@ -3,11 +3,6 @@
     width: 100%;
 }
 
-
-.navbar-container.menu-open .navbar-light {
-    margin-bottom: 200px;
-}
-
 .navbar {
     position: sticky;
     top: 0;
@@ -18,11 +13,18 @@
     z-index: 1000;
 }
 
+.navbar-inner {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 .navbar-dark {
     display: none;
     background-color: #23856D;
     color: #FFFFFF;
-    font-family: Montserrat;
     justify-content: space-between;
     padding: 0 24px;
     align-items: center;
@@ -72,6 +74,7 @@
 }
 
 .navbar-light {
+    background: #FFFFFF;
     width: 100%;
     display: flex;
     align-items: center;
@@ -81,6 +84,7 @@
     font-weight: 700;
     padding: 10px 24px;
     padding-right: 40px;
+    position: relative;
 }
 
 .brand-name {
@@ -90,14 +94,16 @@
 }
 
 .nav-menu {
-    width: 100%;
-    display: flex;
-    justify-content: flex-end; 
+    display: flex; 
     align-items: center; 
 }
 
-.menu-toggle {
+.nav-menu nav{
     display: flex;
+    gap: 150px;
+}
+
+.menu-toggle {
     background: none;
     border: none;
     cursor: pointer;
@@ -109,8 +115,11 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
+    position: absolute;
+    top: 100%;
+    left: 0;
     padding: 10px 0;
-    
+    z-index: 1000;
 }
 
 .menu-items.open {
@@ -129,6 +138,7 @@
 .main-menu li,
 .user-menu li {
     list-style: none;
+    cursor: pointer;
 }
 
 .shop {
@@ -152,6 +162,32 @@
 
 .login img {
     margin-right: 5px;
+}
+
+.cart-icon{
+    display: flex;
+    gap: 5px;
+}
+
+.cart-count{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    text-align: center;
+}
+
+.likes{
+    display: flex;
+    gap: 5px;
+}
+
+.likes span{
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 16px;
+    letter-spacing: 0.2px;
+    text-align: center;
 }
 
 @media (min-width: 769px) {

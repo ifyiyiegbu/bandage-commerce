@@ -35,6 +35,7 @@ const ProductDetail = () => {
         <section>
             <Navbar />
         </section>
+        <div className="product-detail-container">
         <section className='product-nav'>
             <nav>
                 <Link to= "/" className='link'>
@@ -120,10 +121,11 @@ const ProductDetail = () => {
       <section className='bestseller-products'>
         <h3>BESTSELLER PRODUCTS</h3>
         <div className='line'></div>
-        <BestSeller />
+        <div className="bestseller-products-list">
+        <BestSeller limit={8} hideLoadMore />
+        </div>
       </section>
-      <footer className='grand-footer'>
-        <div className='brands'>
+      <div className='brands'>
             <img src="/images/fa-brands-1.png" alt="hooli" />
             <img src="/images/Vector (2).png" alt="lyft" />
             <img src="/images/fa-brands-3.png" alt="hat" />
@@ -131,6 +133,9 @@ const ProductDetail = () => {
             <img src="/images/fa-brands-5.png" alt="aws" />
             <img src="/images/fa-brands-6.png" alt="robot" />
         </div>
+      </div>
+      
+      <footer>
         <Footer />
       </footer>
     </div>
