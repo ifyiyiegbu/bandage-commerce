@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useNavigate } from 'react-router-dom';
 import { useGetProductsQuery } from '../services/products';
@@ -8,6 +8,10 @@ const BestSeller = ({ limit, hideLoadMore }) => {
   const { data, error, isLoading } = useGetProductsQuery();
   const [visibleCount, setVisibleCount] = useState(limit);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    setVisibleCount(limit);
+  }, [limit]);
 
   if (isLoading) return <div>Loading...</div>;
   if (error) return <div>Error loading products</div>;
