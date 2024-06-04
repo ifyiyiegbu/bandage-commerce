@@ -52,13 +52,13 @@ const ShoppingCart = () => {
             <div className="order-container">
               <section className="order-details">
                 <h3 className="cart-heading">Shopping Cart</h3>
-                <table className="table">
+                <div className="table">
                   <thead className="table-head">
-                    <tr>
-                      <th>Item Details</th>
-                      <th>Quantity</th>
-                      <th>Price</th>
-                    </tr>
+                    <div className='table-row'>
+                      <th className='details'>Item Details</th>
+                      <th className='amount'>Quantity</th>
+                      <th className='cost'>Price</th>
+                    </div>
                   </thead>
                   <tbody>
                     {cart.map((item) => (
@@ -106,7 +106,7 @@ const ShoppingCart = () => {
                       </tr>
                     ))}
                   </tbody>
-                </table>
+                </div>
               </section>
               <section className="order-summary">
                 <div className="summary">
